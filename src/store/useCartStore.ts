@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+import type { Product } from '@/types/product';
 
 /**
  * Tipado para los productos en el carrito.
@@ -18,7 +19,7 @@ interface CartItem {
  */
 interface CartState {
   items: CartItem[];
-  addItem: (product: any) => void;
+  addItem: (product: Product) => void;
   removeItem: (productId: number) => void;
   clearCart: () => void;
   getTotal: () => number;

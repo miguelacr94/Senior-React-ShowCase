@@ -6,7 +6,7 @@ import type { Product } from '@/types/product';
 // Mock de la tienda de Zustand
 const mockAddItem = vi.fn();
 vi.mock('@/store/useCartStore', () => ({
-  useCartStore: (selector: any) => selector({ addItem: mockAddItem }),
+  useCartStore: (selector: (state: unknown) => unknown) => selector({ addItem: mockAddItem }),
 }));
 
 const mockProduct: Product = {
